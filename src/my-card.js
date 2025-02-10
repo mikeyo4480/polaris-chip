@@ -97,7 +97,6 @@ export class MyCard extends LitElement {
           <p>${this.description}</p>
           <a href="${this.viewStatsLink}" target="_blank" class="view-stats">View Stats</a>
           <a href="https://hax.psu.edu" target="_blank" class="hax-button">Details</a>
-          <polaris-chip title="${this.chipTitle}" link="${this.chipLink}"></polaris-chip>
         </div>
       </div>
     `;
