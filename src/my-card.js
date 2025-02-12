@@ -18,16 +18,16 @@ export class MyCard extends LitElement {
     this.playerName = "Player Name";
     this.img = "https://d.newsweek.com/en/full/2482587/giants-wr-malik-nabers.jpg?w=1600&h=1600&q=88&f=9965ce8aa35afe5e59660783ff024754";
     this.backgroundColor = "white";
-    this.chipTitle = "NFL Player";
-    this.chipLink = "#";
     this.description = "NFL Player";
     this.viewStatsLink = "#";
+    this.fancy = false;
   }
 
   static get styles() {
     return css`
       :host {
         display: block;
+        --my-css-background: red; /* If you want to reuse in multiple classes */
       }
 
       .card {
@@ -44,7 +44,10 @@ export class MyCard extends LitElement {
       .card img {
         width: 100%;
         height: auto;
+        border-radius: 10px;
         display: block;
+        max-width: 100%;
+        max-height: 100%;
       }
 
       .card-info {
@@ -66,6 +69,7 @@ export class MyCard extends LitElement {
         text-decoration: none;
       }
 
+
       .hax-button {
         display: block;
         margin: 12px auto;
@@ -84,17 +88,53 @@ export class MyCard extends LitElement {
         color: white;
         cursor: pointer;
       }
+
+      details summary {
+  text-align: center;
+  font-size: 20px;
+  padding: 8px 0;
+  color: grey;
+  cursor: pointer; 
+  transition: all 0.3s ease-in-out;
+}
+
+details summary:hover { 
+  font-weight: bold;
+  color: blue;
+  text-shadow: 0 0 10px red;
+  border-radius: 6px; /* Makes background effect smoother */
+  padding: 10px 0; /* Adjust for better hover feel */
+}
+      
+      details div {
+        border: 2px solid black;
+        text-align: left;
+        padding: 8px;
+        height: 70px;
+        overflow: auto;
+      }
     `;
   }
 
+  openChanged(e) {
+    console.log(e.newState);
+    if (e.newState === "open") {
+      this.fancy = true;
+    }
+    else {
+      this.fancy = false;
+    }
+  }
+
   render() {
-    console.log('viewStatsLink:', this.viewStatsLink); // Debugging
     return html`
-      <div class="card" style="--card-bg-color: ${this.backgroundColor}">
+      <div class="card">
         <img src="${this.img}" alt="${this.playerName}">
         <div class="card-info">
           <h2 class="player-name">${this.playerName}</h2>
-          <p>${this.description}</p>
+          <details @toggle="${this.openChanged}">
+          <summary>Description</summary>  
+          <slot></slot></details>
           <a href="${this.viewStatsLink}" target="_blank" class="view-stats">View Stats</a>
           <a href="https://hax.psu.edu" target="_blank" class="hax-button">Details</a>
         </div>
@@ -107,10 +147,9 @@ export class MyCard extends LitElement {
       playerName: { type: String },
       img: { type: String},
       backgroundColor: { type: String},
-      chipTitle: { type: String },
-      chipLink: { type: String },
       description: { type: String },
       viewStatsLink: { type: String, reflect: true },
+      fancy: { type: Boolean, reflect: true },
     };
   }
 }

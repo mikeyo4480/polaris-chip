@@ -32,6 +32,14 @@
       margin: 20px auto;
       max-width: 400px;
     }
+
+    my-card[fancy] { /*This targets the card when the fancy attribute is present and set to true*/
+      --card-bg-color: lightblue;
+      color: white;
+      border-radius: 10px;
+      border: solid 1px black;
+      
+    }
   </style>
   <title>polaris-chip / my-card</title>
 </head>
@@ -51,8 +59,11 @@
     background-color="#f0f8ff"
     chip-title="New York Giants"
     chip-link="https://www.giants.com/"
-    description="Malik Nabers is a wide receiver for the New York Giants. He was drafted in the first round of the 2024 NFL Draft. He played college football at LSU, where he was a standout player and won several awards."
-    viewStatsLink="https://www.nfl.com/players/malik-nabers/stats/">
+    viewStatsLink="https://www.espn.com/nfl/player/_/id/4595348/malik-nabers">
+      <p>
+      Malik Nabers is a wide receiver for the <strong>New York Giants.</strong> He was drafted in the first round of the 2024 NFL Draft. He played college football at LSU, where he was a standout player and won several awards.
+      </p>
+    
     </my-card>
 
     <my-card
@@ -60,9 +71,11 @@
     img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwuxYRoZMBsKG7gf1XKtLeB4-O7yoBCDqBsg&s"
     background-color="#f0f8ff"
     chip-title="New York Giants"
-    chip-link="https://www.buffalobills.com/"
-    description="Brian Burns is an American professional football linebacker for the New York Giants of the National Football League. He played college football for the Florida State Seminoles and was selected by the Carolina Panthers in the first round of the 2019 NFL draft"
+    chip-link="https://www.buffalobills.com/""
     viewStatsLink="https://www.espn.com/nfl/player/_/id/4035631/brian-burns/">
+    <p>
+      Brian Burns is an American professional football linebacker for the <strong>New York Giants</strong> of the National Football League. He played college football for the Florida State Seminoles and was selected by the Carolina Panthers in the first round of the 2019 NFL draft
+    </p>
     </my-card>
 
     <my-card
@@ -71,8 +84,10 @@
     background-color="#f0f8ff"
     chip-title="Buffalo Bills"
     chip-link="https://www.buffalobills.com/"
-    description="Josh Allen is a quarterback for the Buffalo Bills. He was drafted in the first round of the 2018 NFL Draft. He played college football at Wyoming, where he was a standout player and won several awards."
     viewStatsLink="https://www.espn.com/nfl/player/_/id/4426326/kayvon-thibodeaux">
+    <p>
+      Kayvon Thibodeaux is an American professional football linebacker for the <strong>New York Giants</strong> of the National Football League. A native of Los Angeles, he was named USA Today's High School Football Defensive Player of the Year in 2018.
+    </p>
     </my-card>
 
     <my-card
@@ -81,8 +96,10 @@
     background-color="#f0f8ff"
     chip-title="New York Giants"
     chip-link="https://www.giants.com/"
-    description="Tyrone Tracy Jr. is an American professional football running back for the New York Giants of the National Football League. He played college football for the Iowa Hawkeyes and Purdue Boilermakers"
     viewStatsLink= "https://www.espn.com/nfl/player/_/id/4360516/tyrone-tracy-jr">
+    <p>
+      Tyrone Tracy Jr. is an American professional football running back for the <strong>New York Giants</strong> of the National Football League. He played college football for the Iowa Hawkeyes and Purdue Boilermakers
+    </p>
     </my-card>
 
     <my-card
@@ -91,8 +108,10 @@
     background-color="#f0f8ff"
     chip-title="New York Giants"
     chip-link="https://www.giants.com/"
-    description="Jalin Daveon Hyatt is an American professional football wide receiver for the New York Giants of the National Football League."
     viewStatsLink="https://www.espn.com/nfl/player/_/id/4692590/jalin-hyatt">
+    <p>
+      Jalin Daveon Hyatt is an American professional football wide receiver for the <strong>New York Giants</strong> of the National Football League. He played college football at Tennessee.
+    </p>
     </my-card>
   <!-- this is what is bringing in the definition for this tag -->
   <script type="module" src="./src/polaris-chip.js"></script>
