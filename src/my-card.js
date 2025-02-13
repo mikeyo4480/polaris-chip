@@ -30,9 +30,20 @@ export class MyCard extends LitElement {
         --my-css-background: red; /* If you want to reuse in multiple classes */
       }
 
+      :host([fancy]) .card {
+        --card-bg-color: lightblue;
+      color: white;
+      border-radius: 10px;
+      border: solid 2px black;
+      }
+
+      :host([fancy]) .hax-button {
+        background-color: #FF8488;
+      }
+
       .card {
         width: 400px;
-        border: 1px solid;
+        border: 2px solid black;
         border-radius: 10px;
         background-color: var(--card-bg-color, white); /*This sets the background color to the value of the --card-bg-color variable to white if variable is not defined*/
         margin: 0 auto;
@@ -58,8 +69,8 @@ export class MyCard extends LitElement {
       .player-name {
         font-size: 24px;
         color: blue;
-        text-shadow: 0 0 10px red;
-        margin-bottom: 10px;
+/*         text-shadow: 0 0 10px red; This was pretty obnoxious but i thought it looked cool
+ */        margin-bottom: 10px;
       }
 
       .view-stats {
@@ -77,7 +88,7 @@ export class MyCard extends LitElement {
         border: none;
         border-radius: 6px;
         background-color: #add8e6;
-        color: blue;
+        color: red;
         font-weight: bold;
         text-align: center;
         transition: background-color .3s ease-in-out, color 0.3 ease; /*This transtition makes the button and text change colors over 0.3 sec*/
@@ -89,19 +100,21 @@ export class MyCard extends LitElement {
         cursor: pointer;
       }
 
+    
+
       details summary {
   text-align: center;
   font-size: 20px;
   padding: 8px 0;
-  color: grey;
+  color: red;
   cursor: pointer; 
   transition: all 0.3s ease-in-out;
 }
 
 details summary:hover { 
   font-weight: bold;
-  color: blue;
-  text-shadow: 0 0 10px red;
+  color: red;
+  /* text-shadow: 0 0 10px red; This was pretty obnoxious but i thought it looked cool*/
   border-radius: 6px; /* Makes background effect smoother */
   padding: 10px 0; /* Adjust for better hover feel */
 }
