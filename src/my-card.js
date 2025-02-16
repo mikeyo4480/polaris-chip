@@ -69,8 +69,7 @@ export class MyCard extends LitElement {
       .player-name {
         font-size: 24px;
         color: blue;
-/*         text-shadow: 0 0 10px red; This was pretty obnoxious but i thought it looked cool
- */        margin-bottom: 10px;
+        margin-bottom: 10px;
       }
 
       .view-stats {
@@ -114,9 +113,8 @@ export class MyCard extends LitElement {
 details summary:hover { 
   font-weight: bold;
   color: red;
-  /* text-shadow: 0 0 10px red; This was pretty obnoxious but i thought it looked cool*/
-  border-radius: 6px; /* Makes background effect smoother */
-  padding: 10px 0; /* Adjust for better hover feel */
+  border-radius: 6px;
+  padding: 10px; 
 }
       
       details div {
